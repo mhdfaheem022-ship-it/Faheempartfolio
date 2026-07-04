@@ -47,11 +47,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '5',
-    title: 'Obsidian Villa Walkthrough',
+    title: 'Experience Luxury Living',
     category: 'Real Estate Videos',
     industry: 'Real Estate / Architecture',
-    desc: 'Breathtaking virtual tour of a modern minimalist villa, combining drone footage simulation with AI rendering touchups.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-minimalist-living-room-with-fireplace-43110-large.mp4',
+    desc: 'A breathtaking virtual tour trailer of a modern minimalist villa. Video duration and complexity can be customized based on client request.',
+    videoUrl: 'https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/public/Video%20files/Experience_Luxury_Living.mp4',
     poster: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
   },
   {
