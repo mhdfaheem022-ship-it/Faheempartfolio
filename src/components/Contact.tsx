@@ -19,8 +19,8 @@ export default function Contact() {
     e.preventDefault();
     setStatus('loading');
 
-    // TODO: Paste your free Web3Forms Access Key here!
-    const accessKey = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+    // Web3Forms Access Key
+    const accessKey = 'c00ff92f-cd06-4d76-971e-23bb7527ea8e';
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
