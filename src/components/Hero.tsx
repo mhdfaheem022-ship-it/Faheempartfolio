@@ -44,7 +44,8 @@ export default function Hero() {
             loop 
             muted 
             playsInline
-            poster="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
           >
             <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-loop-41777-large.mp4" type="video/mp4" />
             Your browser does not support the video tag.

@@ -61,7 +61,8 @@ export default function FeaturedWork() {
                     muted 
                     playsInline 
                     autoPlay
-                    poster={project.poster}
+                    controlsList="nodownload"
+                    onContextMenu={(e) => e.preventDefault()}
                   >
                     <source src={project.videoUrl} type="video/mp4" />
                   </video>
@@ -127,6 +128,8 @@ export default function FeaturedWork() {
                 controls 
                 autoPlay 
                 playsInline
+                controlsList="nodownload"
+                onContextMenu={(e) => e.preventDefault()}
               >
                 <source src={selectedVideo} type="video/mp4" />
                 Your browser does not support the video tag.
