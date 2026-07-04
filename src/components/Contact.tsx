@@ -15,28 +15,51 @@ export default function Contact() {
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
 
-    // Simulate network submission delay
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        country: '',
-        projectType: 'Cinematic AI Video',
-        budget: '$150 - $300',
-        message: ''
+    // TODO: Paste your free Web3Forms Access Key here!
+    const accessKey = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New Portfolio Inquiry from ${formData.name}`,
+          ...formData
+        })
       });
-      
-      // Clear notification after 4s
-      setTimeout(() => {
-        setStatus('idle');
-      }, 4000);
-    }, 1500);
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          country: '',
+          projectType: 'Cinematic AI Video',
+          budget: '$150 - $300',
+          message: ''
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      setStatus('error');
+    }
+
+    // Clear notification after 5s
+    setTimeout(() => {
+      setStatus('idle');
+    }, 5000);
   };
 
   return (
