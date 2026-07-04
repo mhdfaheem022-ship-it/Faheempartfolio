@@ -42,7 +42,7 @@ export const PROJECTS: Project[] = [
     category: 'UGC Videos',
     industry: 'E-commerce',
     desc: 'Authentic user-generated marketing video showcasing skincare applications, designed to increase conversion rates on TikTok.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-girl-taking-selfies-with-smartphone-in-front-of-mirror-42211-large.mp4',
+    videoUrl: 'https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/public/Video%20files/0427%20(1).mp4',
     poster: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80'
   },
   {
