@@ -13,7 +13,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="hero-tag">AI Video Production Studio</span>
-          <h1 class="hero-title">
+          <h1 className="hero-title">
             Premium AI Videos <br />
             That Grow Modern <br />
             Businesses.
