@@ -65,11 +65,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '7',
-    title: 'The AI Horizon Podcast',
+    title: 'Founder Spotlight Podcast',
     category: 'AI Podcasts',
     industry: 'Media / Education',
-    desc: 'Multi-camera simulated podcast layout with automated speaker tracking and text overlays, generating micro-content from audio.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-young-woman-working-at-a-laptop-in-a-cafe-42260-large.mp4',
+    desc: 'Podcast series featuring startup founders sharing their products and company vision. This episode features a TikTok influencer host.',
+    videoUrl: 'https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/public/Video%20files/good.mp4',
     poster: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80'
   },
   {
