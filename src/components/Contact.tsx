@@ -9,6 +9,7 @@ export default function Contact() {
     email: '',
     country: '',
     projectType: 'Cinematic AI Video',
+    budget: '$150 - $300',
     message: ''
   });
 
@@ -27,6 +28,7 @@ export default function Contact() {
         email: '',
         country: '',
         projectType: 'Cinematic AI Video',
+        budget: '$150 - $300',
         message: ''
       });
       
@@ -160,23 +162,41 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="form-group">
-                <label htmlFor="projectType">Project Type</label>
-                <select
-                  id="projectType"
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                >
-                  <option>Cinematic AI Video</option>
-                  <option>AI Clone Video</option>
-                  <option>Product Video</option>
-                  <option>UGC Video</option>
-                  <option>Real Estate Marketing</option>
-                  <option>SaaS / Startup Demo</option>
-                  <option>Commercial Advertisement</option>
-                  <option>AI Podcast Generation</option>
-                  <option>Other / Custom Project</option>
-                </select>
+              <div className="form-grid-2">
+                <div className="form-group">
+                  <label htmlFor="projectType">Project Type</label>
+                  <select
+                    id="projectType"
+                    value={formData.projectType}
+                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                  >
+                    <option>Cinematic AI Video</option>
+                    <option>AI Clone Video</option>
+                    <option>Product Video</option>
+                    <option>UGC Video</option>
+                    <option>Real Estate Marketing</option>
+                    <option>SaaS / Startup Demo</option>
+                    <option>Commercial Advertisement</option>
+                    <option>AI Podcast Generation</option>
+                    <option>Other / Custom Project</option>
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="budget">Estimated Budget</label>
+                  <select
+                    id="budget"
+                    value={formData.budget}
+                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                  >
+                    <option>Less than $150</option>
+                    <option>$150 - $300</option>
+                    <option>$300 - $500</option>
+                    <option>$500 - $1,000</option>
+                    <option>$1,000 - $2,500</option>
+                    <option>$2,500+</option>
+                  </select>
+                </div>
               </div>
 
               <div className="form-group">
