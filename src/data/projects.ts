@@ -55,15 +55,6 @@ export const PROJECTS: Project[] = [
     poster: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'
   },
   {
-    id: '6',
-    title: 'Future Tech Commercial',
-    category: 'Commercial Ads',
-    industry: 'Technology',
-    desc: 'A premium promotional commercial highlighting corporate SaaS features using modern styling and high-end narrative pace.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-serving-freshly-brewed-coffee-41711-large.mp4',
-    poster: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
-  },
-  {
     id: '7',
     title: 'Founder Spotlight Podcast',
     category: 'AI Podcasts',
@@ -90,7 +81,7 @@ export const CATEGORIES = [
   'Product Videos',
   'UGC Videos',
   'Real Estate Videos',
-  'Commercial Ads',
   'AI Podcasts',
   'Social Media Campaigns'
 ];
+
