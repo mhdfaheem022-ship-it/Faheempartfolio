@@ -74,11 +74,11 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '8',
-    title: 'LaunchDay Campaign Reel',
+    title: 'Social Media Viral Videos with Brand Name',
     category: 'Social Media Campaigns',
     industry: 'Mobile Apps',
     desc: 'Dynamic social media compilation capturing rapid visual hooks and typography overlays for maximum engagement metrics.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-holding-and-typing-on-smartphone-41662-large.mp4',
+    videoUrl: 'https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/public/Video%20files/WhatsApp%20Video%202026-06-30%20at%2010.35.08%20PM%20(1).mp4',
     poster: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80'
   }
 ];
