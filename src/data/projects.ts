@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     category: 'Product Videos',
     industry: 'Food & Beverage',
     desc: 'Cinematic product sequence showing slow-motion closeups of fresh coffee brewing. Designed for Instagram advertisements.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-pouring-hot-coffee-into-a-cup-41712-large.mp4',
+    videoUrl: 'https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/public/Video%20files/WhatsApp%20Video%202026-06-30%20at%2010.35.08%20PM.mp4',
     poster: 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=800&q=80'
   },
   {
