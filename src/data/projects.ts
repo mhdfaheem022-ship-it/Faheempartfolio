@@ -11,11 +11,11 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Echoes of the Future',
+    title: 'Cinematic Storytelling Style Brand Ad',
     category: 'Cinematic Videos',
     industry: 'Sci-Fi / Entertainment',
     desc: 'Cinematic AI-generated visuals capturing a futuristic cityscape. Combining advanced text-to-video tools with bespoke audio design.',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-loop-41777-large.mp4',
+    videoUrl: 'https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/public/Video%20files/WhatsApp%20Video%202026-06-30%20at%2010.35.07%20PM%20(1).mp4',
     poster: 'https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=800&q=80'
   },
   {
