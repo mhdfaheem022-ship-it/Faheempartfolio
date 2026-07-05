@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Side Video Showreel */}
+        {/* Right Side Image Showreel */}
         <motion.div 
           className="hero-visual"
           initial="hidden"
@@ -60,18 +60,12 @@ export default function Hero() {
           variants={scaleIn}
           style={{ transformStyle: 'preserve-3d' }}
         >
-          <video 
+          <img 
+            src="https://opzeaqtganycghocinhz.supabase.co/storage/v1/object/sign/Image/Man_typing_on_luxury_laptop_202607051414.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV84ZjZjZGJjZi02MjE0LTQxNGUtYTRjOC1mYmZjYTkwYmI1NDciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJbWFnZS9NYW5fdHlwaW5nX29uX2x1eHVyeV9sYXB0b3BfMjAyNjA3MDUxNDE0LmpwZWciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzgzMjQxMjU5LCJleHAiOjI3MjkzMjEyNTl9.lT_o6nd5r3wNDkNdfV7pGHA2_-hnp2m42hgsC4vKxgI" 
+            alt="Cinematic Showreel" 
             className="showreel-player"
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            controlsList="nodownload"
-            onContextMenu={(e) => e.preventDefault()}
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-loop-41777-large.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
           <div 
             className="showreel-badge"
             style={{
@@ -90,7 +84,7 @@ export default function Hero() {
               gap: '0.4rem'
             }}
           >
-            <Play size={12} fill="#ffffff" /> SHOWREEL 2026
+            <Play size={12} fill="#ffffff" /> PORTFOLIO 2026
           </div>
         </motion.div>
       </div>
