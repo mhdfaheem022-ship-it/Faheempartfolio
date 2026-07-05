@@ -1,37 +1,43 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Copy, Check, Star } from 'lucide-react';
+
+const slideRight = {
+  hidden: { opacity: 0, rotateY: -10, x: -80, z: -50 },
+  visible: { 
+    opacity: 1, 
+    rotateY: 0, 
+    x: 0, 
+    z: 0,
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const } 
+  }
+};
+
+const slideLeft = {
+  hidden: { opacity: 0, rotateY: 10, x: 80, z: -50 },
+  visible: { 
+    opacity: 1, 
+    rotateY: 0, 
+    x: 0, 
+    z: 0,
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const, delay: 0.1 } 
+  }
+};
 
 export default function About() {
-  const [copied, setCopied] = useState(false);
-  const discountCode = 'faheemsha10_80701';
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(discountCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
-    <section className="section" id="about" style={{ backgroundColor: '#fafafa', borderTop: '1px solid #f0f0f0', borderBottom: '1px solid #f0f0f0' }}>
+    <section className="section" id="about" style={{ backgroundColor: '#fafafa', borderTop: '1px solid #f0f0f0', borderBottom: '1px solid #f0f0f0', overflow: 'hidden', perspective: '1200px' }}>
       <div className="container">
-        <div className="about-grid">
+        <div className="about-grid" style={{ transformStyle: 'preserve-3d' }}>
           
-          {/* Left Column: Visual/Promo */}
+          {/* Left Column: Biography */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={slideRight}
           >
-            {/* HeyGen Ambassador Badge */}
-            <div className="ambassador-badge">
-              <Star size={16} fill="currentColor" /> Official HeyGen Ambassador
-            </div>
-
-            {/* Profile Intro */}
+            <span className="section-tag">About Me</span>
             <h2 className="section-title" style={{ marginTop: '1rem' }}>
-              Hi, I'm <br /> Muhammed Faheem Sha.
+              Muhammed <br /> Faheem Sha.
             </h2>
             
             <p className="about-intro">
@@ -43,48 +49,57 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Right Column: Discount Promo Box */}
+          {/* Right Column: Premium Animated Image Frame with Grayscale to Color transition */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={slideLeft}
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
-            <div className="premium-card discount-card">
-              <div className="discount-info">
-                <h4>Partner Offer</h4>
-                <p>Get 10% off your HeyGen subscription with my official Ambassador code.</p>
-              </div>
-
-              <button 
-                className="promo-code-box"
-                onClick={handleCopy}
-                title="Copy Promo Code"
+            <div 
+              style={{
+                position: 'relative',
+                width: '320px',
+                height: '420px',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
+                backgroundColor: '#111111',
+                border: '1px solid rgba(244, 197, 66, 0.2)'
+              }}
+            >
+              {/* Grayscale on normal state, color on hover */}
+              <motion.div
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  cursor: 'pointer',
-                  position: 'relative'
+                  width: '100%',
+                  height: '100%',
+                  backgroundImage: 'url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'grayscale(100%) brightness(0.9)',
+                  transition: 'filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
-              >
-                <span>{discountCode}</span>
-                {copied ? <Check size={16} style={{ color: '#10b981' }} /> : <Copy size={16} style={{ color: '#666666' }} />}
-              </button>
+                whileHover={{ 
+                  filter: 'grayscale(0%) brightness(1)',
+                  scale: 1.05 
+                }}
+              />
+              {/* Gold border decorative frame overlay */}
+              <div 
+                style={{
+                  position: 'absolute',
+                  top: '15px',
+                  left: '15px',
+                  right: '15px',
+                  bottom: '15px',
+                  border: '1px solid rgba(244, 197, 66, 0.4)',
+                  borderRadius: '12px',
+                  pointerEvents: 'none',
+                  zIndex: 2
+                }}
+              />
             </div>
-            
-            {copied && (
-              <p style={{
-                fontSize: '0.8rem',
-                color: '#10b981',
-                fontWeight: 600,
-                marginTop: '0.6rem',
-                textAlign: 'right',
-                marginRight: '2rem'
-              }}>
-                Code copied to clipboard!
-              </p>
-            )}
           </motion.div>
 
         </div>

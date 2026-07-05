@@ -1,16 +1,37 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 
+const foldUp = {
+  hidden: { opacity: 0, rotateX: -15, y: 80, z: -50 },
+  visible: { 
+    opacity: 1, 
+    rotateX: 0, 
+    y: 0, 
+    z: 0,
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const } 
+  }
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.85, z: -150 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    z: 0,
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as const, delay: 0.2 }
+  }
+};
+
 export default function Hero() {
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" style={{ perspective: '1200px', transformStyle: 'preserve-3d' }}>
       <div className="container hero-container">
         {/* Left Side Content */}
         <motion.div 
           className="hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          initial="hidden"
+          animate="visible"
+          variants={foldUp}
         >
           <span className="hero-tag">AI Video Production Studio</span>
           <h1 className="hero-title">
@@ -34,9 +55,10 @@ export default function Hero() {
         {/* Right Side Video Showreel */}
         <motion.div 
           className="hero-visual"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+          style={{ transformStyle: 'preserve-3d' }}
         >
           <video 
             className="showreel-player"

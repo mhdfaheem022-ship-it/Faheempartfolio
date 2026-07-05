@@ -44,11 +44,33 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, delay: index * 0.03, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ 
+                y: -8, 
+                borderColor: 'var(--accent)', 
+                boxShadow: 'var(--card-shadow-hover)' 
+              }}
+              style={{ transition: 'box-shadow 0.3s ease, border-color 0.3s ease' }}
             >
-              <div className="service-number">{service.id}</div>
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
+              <div 
+                className="service-number"
+                style={{ 
+                  fontFamily: 'var(--font-title)', 
+                  fontSize: '2.5rem', 
+                  color: 'var(--accent)', 
+                  lineHeight: '1', 
+                  marginBottom: '1rem',
+                  fontWeight: 'normal'
+                }}
+              >
+                {service.id}
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-main)', fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.8rem' }}>
+                {service.title}
+              </h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                {service.desc}
+              </p>
             </motion.div>
           ))}
         </div>
